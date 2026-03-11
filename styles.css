@@ -1,13 +1,13 @@
 :root {
-  --ink: #1a1c1e;
-  --sand: #f7f1e8;
-  --sun: #ffcf6f;
-  --coral: #ff7a6e;
-  --teal: #1f6f78;
-  --ocean: #143f4b;
-  --mint: #c8f1e0;
+  --ink: #0f1d24;
+  --sand: #f4f9fd;
+  --sun: #cfeee0;
+  --coral: #00d17c;
+  --teal: #003648;
+  --ocean: #27425b;
+  --mint: #00d17c;
   --white: #ffffff;
-  --shadow: 0 20px 60px rgba(20, 63, 75, 0.2);
+  --shadow: 0 20px 60px rgba(0, 54, 72, 0.18);
 }
 
 * {
@@ -19,7 +19,7 @@
 body {
   font-family: "Manrope", system-ui, -apple-system, sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at top, #fff7e5 0%, #f7f1e8 45%, #f1efe9 100%);
+  background: radial-gradient(circle at top, #ffffff 0%, #f4f9fd 45%, #edf3f7 100%);
   line-height: 1.6;
 }
 
@@ -29,7 +29,7 @@ img {
 }
 
 .page {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container {
@@ -64,13 +64,17 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--teal), var(--ocean));
-  color: var(--white);
+  background: #ffffff;
+  border: 1px solid rgba(0, 54, 72, 0.15);
   display: grid;
   place-items: center;
-  font-weight: 700;
-  font-family: "Fraunces", serif;
-  letter-spacing: 0.5px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 54, 72, 0.12);
+}
+
+.logo img {
+  width: 34px;
+  height: 34px;
 }
 
 .brand-text {
@@ -105,7 +109,7 @@ img {
 }
 
 .nav a:hover {
-  background: rgba(31, 111, 120, 0.1);
+  background: rgba(0, 54, 72, 0.08);
 }
 
 .nav-cta {
@@ -166,9 +170,9 @@ img {
 }
 
 .btn.primary {
-  background: var(--teal);
-  color: var(--white);
-  box-shadow: 0 10px 30px rgba(31, 111, 120, 0.25);
+  background: var(--mint);
+  color: #003648;
+  box-shadow: 0 10px 30px rgba(0, 209, 124, 0.25);
 }
 
 .btn.ghost {
@@ -235,10 +239,23 @@ img {
 .mini-form input,
 .mini-form select {
   width: 100%;
-  padding: 10px 12px;
+  padding: 10px 14px;
   border-radius: 10px;
   border: 1px solid rgba(26, 28, 30, 0.2);
   font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  height: 44px;
+}
+
+.mini-form select {
+  appearance: none;
+  background-color: #fff;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f6f78' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
 }
 
 .helper {
@@ -295,7 +312,7 @@ img {
 
 .pricing-tabs {
   display: inline-flex;
-  background: rgba(31, 111, 120, 0.1);
+  background: rgba(0, 54, 72, 0.08);
   border-radius: 999px;
   padding: 6px;
   margin-bottom: 26px;
@@ -422,7 +439,7 @@ img {
 .chips span {
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(31, 111, 120, 0.12);
+  background: rgba(0, 54, 72, 0.08);
   color: var(--ocean);
   font-weight: 600;
 }
