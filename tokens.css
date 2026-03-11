@@ -1,0 +1,229 @@
+@layer ds, alias;
+
+@layer ds {
+  :root {
+    /* Color primitives */
+    --ds-color-ink-900: #0f1d24;
+    --ds-color-brand-900: #003648;
+    --ds-color-brand-700: #27425b;
+    --ds-color-brand-500: #00d17c;
+    --ds-color-brand-100: #cfeee0;
+    --ds-color-surface-0: #ffffff;
+    --ds-color-surface-50: #f4f9fd;
+    --ds-color-surface-100: #edf3f7;
+    --ds-color-surface-150: #e9f6f0;
+    --ds-color-surface-200: #fffdf8;
+
+    /* Alpha colors */
+    --ds-alpha-ink-20: rgba(26, 28, 30, 0.2);
+    --ds-alpha-ink-60: rgba(26, 28, 30, 0.6);
+    --ds-alpha-ink-70: rgba(26, 28, 30, 0.7);
+    --ds-alpha-ink-78: rgba(26, 28, 30, 0.78);
+    --ds-alpha-brand-08: rgba(0, 54, 72, 0.08);
+    --ds-alpha-brand-18: rgba(0, 54, 72, 0.18);
+    --ds-alpha-brand-12: rgba(20, 63, 75, 0.12);
+    --ds-alpha-surface-85: rgba(255, 255, 255, 0.85);
+    --ds-alpha-surface-92: rgba(255, 255, 255, 0.92);
+    --ds-alpha-accent-25: rgba(0, 209, 124, 0.25);
+    --ds-alpha-surface-10: rgba(244, 249, 253, 0.1);
+    --ds-alpha-surface-60: rgba(244, 249, 253, 0.6);
+    --ds-alpha-fade-0: rgba(244, 249, 253, 0);
+    --ds-alpha-fade-100: rgba(244, 249, 253, 1);
+
+    /* Typography */
+    --ds-font-family-body: "Manrope", system-ui, -apple-system, sans-serif;
+    --ds-font-family-display: "Fraunces", serif;
+    --ds-font-size-xs: 0.75rem;
+    --ds-font-size-sm: 0.8rem;
+    --ds-font-size-sm-2: 0.85rem;
+    --ds-font-size-base: 0.9rem;
+    --ds-font-size-base-2: 0.95rem;
+    --ds-font-size-md: 1.05rem;
+    --ds-font-size-lg: 1.1rem;
+    --ds-font-size-xl: 1.5rem;
+    --ds-font-size-display: clamp(2.6rem, 3vw, 3.5rem);
+    --ds-font-size-title: clamp(2rem, 2.6vw, 2.6rem);
+    --ds-font-weight-semibold: 600;
+    --ds-font-weight-bold: 700;
+    --ds-line-height-base: 1.6;
+    --ds-line-height-tight: 1.1;
+    --ds-line-height-compact: 1.2;
+    --ds-letter-spacing-tight: 0.3px;
+    --ds-letter-spacing-wide: 2px;
+
+    /* Spacing scale */
+    --ds-space-0: 0px;
+    --ds-space-2: 2px;
+    --ds-space-4: 4px;
+    --ds-space-6: 6px;
+    --ds-space-8: 8px;
+    --ds-space-10: 10px;
+    --ds-space-12: 12px;
+    --ds-space-14: 14px;
+    --ds-space-16: 16px;
+    --ds-space-18: 18px;
+    --ds-space-20: 20px;
+    --ds-space-22: 22px;
+    --ds-space-24: 24px;
+    --ds-space-26: 26px;
+    --ds-space-28: 28px;
+    --ds-space-30: 30px;
+    --ds-space-32: 32px;
+    --ds-space-40: 40px;
+    --ds-space-44: 44px;
+    --ds-space-48: 48px;
+    --ds-space-60: 60px;
+    --ds-space-80: 80px;
+    --ds-space-90: 90px;
+    --ds-space-120: 120px;
+    --ds-space-140: 140px;
+    --ds-space-240: 240px;
+
+    /* Sizes */
+    --ds-size-container: 1120px;
+    --ds-size-container-fluid: 92vw;
+    --ds-size-hero-card: 420px;
+    --ds-size-avatar: 44px;
+    --ds-size-image: 240px;
+    --ds-size-input: 44px;
+
+    /* Border radius */
+    --ds-radius-sm: 10px;
+    --ds-radius-md: 14px;
+    --ds-radius-lg: 20px;
+    --ds-radius-xl: 22px;
+    --ds-radius-xxl: 24px;
+    --ds-radius-pill: 999px;
+
+    /* Borders */
+    --ds-border-thin: 1px;
+    --ds-border-strong: 2px;
+
+    /* Elevation */
+    --ds-shadow-card: 0 20px 60px rgba(0, 54, 72, 0.18);
+    --ds-shadow-float: 0 10px 30px rgba(0, 209, 124, 0.25);
+    --ds-shadow-soft: 0 8px 18px rgba(0, 54, 72, 0.12);
+    --ds-shadow-none: none;
+
+    /* Motion */
+    --ds-motion-fast: 0.2s;
+    --ds-motion-slow: 0.6s;
+    --ds-ease-standard: ease;
+    --ds-transition-none: none;
+  }
+}
+
+@layer alias {
+  :root {
+    /* Color aliases */
+    --color-text: var(--ds-color-ink-900, #0f1d24);
+    --color-text-muted: var(--ds-alpha-ink-70, rgba(26, 28, 30, 0.7));
+    --color-text-subtle: var(--ds-alpha-ink-60, rgba(26, 28, 30, 0.6));
+    --color-text-soft: var(--ds-alpha-ink-78, rgba(26, 28, 30, 0.78));
+    --color-border: var(--ds-alpha-ink-20, rgba(26, 28, 30, 0.2));
+    --color-brand-strong: var(--ds-color-brand-900, #003648);
+    --color-brand: var(--ds-color-brand-700, #27425b);
+    --color-accent: var(--ds-color-brand-500, #00d17c);
+    --color-accent-soft: var(--ds-alpha-accent-25, rgba(0, 209, 124, 0.25));
+    --color-surface: var(--ds-color-surface-0, #ffffff);
+    --color-surface-soft: var(--ds-color-surface-50, #f4f9fd);
+    --color-surface-muted: var(--ds-color-surface-100, #edf3f7);
+    --color-surface-warm: var(--ds-color-surface-200, #fffdf8);
+    --color-surface-mint: var(--ds-color-surface-150, #e9f6f0);
+    --color-overlay-strong: var(--ds-alpha-surface-92, rgba(255, 255, 255, 0.92));
+    --color-overlay: var(--ds-alpha-surface-85, rgba(255, 255, 255, 0.85));
+    --color-brand-08: var(--ds-alpha-brand-08, rgba(0, 54, 72, 0.08));
+    --color-brand-12: var(--ds-alpha-brand-12, rgba(20, 63, 75, 0.12));
+    --color-brand-18: var(--ds-alpha-brand-18, rgba(0, 54, 72, 0.18));
+    --color-surface-10: var(--ds-alpha-surface-10, rgba(244, 249, 253, 0.1));
+    --color-surface-60: var(--ds-alpha-surface-60, rgba(244, 249, 253, 0.6));
+    --color-fade-0: var(--ds-alpha-fade-0, rgba(244, 249, 253, 0));
+    --color-fade-100: var(--ds-alpha-fade-100, rgba(244, 249, 253, 1));
+
+    /* Typography aliases */
+    --font-body: var(--ds-font-family-body, system-ui);
+    --font-display: var(--ds-font-family-display, serif);
+    --text-xs: var(--ds-font-size-xs, 0.75rem);
+    --text-sm: var(--ds-font-size-sm, 0.8rem);
+    --text-sm-2: var(--ds-font-size-sm-2, 0.85rem);
+    --text-base: var(--ds-font-size-base, 0.9rem);
+    --text-base-2: var(--ds-font-size-base-2, 0.95rem);
+    --text-md: var(--ds-font-size-md, 1.05rem);
+    --text-lg: var(--ds-font-size-lg, 1.1rem);
+    --text-xl: var(--ds-font-size-xl, 1.5rem);
+    --text-display: var(--ds-font-size-display, 2.6rem);
+    --text-title: var(--ds-font-size-title, 2rem);
+    --weight-semibold: var(--ds-font-weight-semibold, 600);
+    --weight-bold: var(--ds-font-weight-bold, 700);
+    --leading-base: var(--ds-line-height-base, 1.6);
+    --leading-tight: var(--ds-line-height-tight, 1.1);
+    --leading-compact: var(--ds-line-height-compact, 1.2);
+    --tracking-tight: var(--ds-letter-spacing-tight, 0.3px);
+    --tracking-wide: var(--ds-letter-spacing-wide, 2px);
+
+    /* Spacing aliases */
+    --space-0: var(--ds-space-0, 0px);
+    --space-2: var(--ds-space-2, 2px);
+    --space-4: var(--ds-space-4, 4px);
+    --space-6: var(--ds-space-6, 6px);
+    --space-8: var(--ds-space-8, 8px);
+    --space-10: var(--ds-space-10, 10px);
+    --space-12: var(--ds-space-12, 12px);
+    --space-14: var(--ds-space-14, 14px);
+    --space-16: var(--ds-space-16, 16px);
+    --space-18: var(--ds-space-18, 18px);
+    --space-20: var(--ds-space-20, 20px);
+    --space-22: var(--ds-space-22, 22px);
+    --space-24: var(--ds-space-24, 24px);
+    --space-26: var(--ds-space-26, 26px);
+    --space-28: var(--ds-space-28, 28px);
+    --space-30: var(--ds-space-30, 30px);
+    --space-32: var(--ds-space-32, 32px);
+    --space-40: var(--ds-space-40, 40px);
+    --space-44: var(--ds-space-44, 44px);
+    --space-48: var(--ds-space-48, 48px);
+    --space-60: var(--ds-space-60, 60px);
+    --space-80: var(--ds-space-80, 80px);
+    --space-90: var(--ds-space-90, 90px);
+    --space-120: var(--ds-space-120, 120px);
+    --space-140: var(--ds-space-140, 140px);
+    --space-240: var(--ds-space-240, 240px);
+
+    /* Size aliases */
+    --size-container: var(--ds-size-container, 1120px);
+    --size-container-fluid: var(--ds-size-container-fluid, 92vw);
+    --size-hero-card: var(--ds-size-hero-card, 420px);
+    --size-avatar: var(--ds-size-avatar, 44px);
+    --size-image: var(--ds-size-image, 240px);
+    --size-input: var(--ds-size-input, 44px);
+
+    /* Radius aliases */
+    --radius-sm: var(--ds-radius-sm, 10px);
+    --radius-md: var(--ds-radius-md, 14px);
+    --radius-lg: var(--ds-radius-lg, 20px);
+    --radius-xl: var(--ds-radius-xl, 22px);
+    --radius-xxl: var(--ds-radius-xxl, 24px);
+    --radius-pill: var(--ds-radius-pill, 999px);
+
+    /* Border aliases */
+    --border-thin: var(--ds-border-thin, 1px);
+    --border-strong: var(--ds-border-strong, 2px);
+
+    /* Elevation aliases */
+    --elevation-card: var(--ds-shadow-card, 0 20px 60px rgba(0, 54, 72, 0.18));
+    --elevation-float: var(--ds-shadow-float, 0 10px 30px rgba(0, 209, 124, 0.25));
+    --elevation-soft: var(--ds-shadow-soft, 0 8px 18px rgba(0, 54, 72, 0.12));
+    --elevation-none: var(--ds-shadow-none, none);
+
+    /* Z-index */
+    --z-header: 100;
+
+    /* Motion */
+    --motion-fast: var(--ds-motion-fast, 0.2s);
+    --motion-slow: var(--ds-motion-slow, 0.6s);
+    --ease-standard: var(--ds-ease-standard, ease);
+    --transition-button: transform var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard);
+    --transition-reveal: all var(--motion-slow) var(--ease-standard);
+    --transition-none: var(--ds-transition-none, none);
+  }
+}
