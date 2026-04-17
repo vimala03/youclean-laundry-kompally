@@ -14,8 +14,8 @@
     color: var(--color-text);
     background: radial-gradient(circle at top, var(--color-surface) 0%, var(--color-surface-soft) 45%, var(--color-surface-muted) 100%);
     line-height: var(--leading-base);
-    overflow-x: hidden;
-  }
+    overflow-x: clip;
+    }
 
   img {
     max-width: 100%;
@@ -29,8 +29,31 @@
   .container {
     width: min(var(--size-container), var(--size-container-fluid));
     margin: var(--space-0) auto;
+    padding: 0 16px;
   }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
 
+    .header-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  
+    .nav a {
+      font-size: 14px;
+    }
+  }
   .site-header {
     position: sticky;
     top: var(--space-0);
@@ -39,7 +62,9 @@
     border-bottom: var(--border-thin) solid var(--color-brand-12);
     z-index: var(--z-header);
   }
-
+  .site-header {
+    z-index: 1000;
+  }
   .header-inner {
     display: flex;
     align-items: center;
@@ -387,9 +412,9 @@
   }
 
   .hero-wave {
-    position: absolute;
-    inset: auto var(--space-0) calc(var(--space-60) * -1);
-    height: var(--space-120);
+    position: relative;
+    inset: auto var(--space-0) 0;
+    height: var(--space-80);
     background: linear-gradient(180deg, var(--color-fade-0), var(--color-fade-100));
   }
 
@@ -1252,4 +1277,58 @@
       transition: var(--transition-none);
     }
   }
+}
+/* ===== RESPONSIVE: Tablet ===== */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+/* ===== RESPONSIVE: Mobile ===== */
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+}
+.footer-social {
+  margin-top: 12px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
 }
