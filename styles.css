@@ -1428,6 +1428,42 @@
   font-size: var(--text-sm);
 }
 
+/* ── Service area map ───────────────────────────────────────────────────────── */
+.area-map {
+  margin-top: var(--space-24);
+  width: 100%;
+}
+
+.area-map-frame {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: var(--border-thin) solid var(--color-brand-12);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.area-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* clicks pass through to the <a> wrapper */
+}
+
+.area-map-caption {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .area-map-frame {
+    height: 340px;
+  }
+}
+
 /* ── Referral QR caption (shared) ───────────────────────────────────────────── */
 .refer-qr-caption {
   font-size: var(--text-sm);
