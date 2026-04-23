@@ -437,3 +437,72 @@ const revealOnScroll = () => {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
+
+// ─── Referral Section ────────────────────────────────────────────────────────
+
+const isMobileDevice = () =>
+  /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+
+const referralCode = 'YOUCLEAN100';
+const referralLink = `https://www.youcleanlaundry.in/?ref=${referralCode}`;
+
+// WhatsApp share intent — opens contact picker, NOT business chat
+const buildReferralShareUrl = () => {
+  const text = encodeURIComponent(
+    `Get 10% off your first YouClean order. Use my code ${referralCode} 👇 ${referralLink}`
+  );
+  return `https://wa.me/?text=${text}`;
+};
+
+// "Invite via WhatsApp" — opens WhatsApp contact picker so user picks ANY friend
+const referShareBtn = document.querySelector('.js-refer-share');
+if (referShareBtn) {
+  referShareBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.open(buildReferralShareUrl(), '_blank');
+  });
+}
+
+// "Copy Invite Link" — clipboard copy with 2s "Copied!" feedback
+const referCopyBtn = document.querySelector('.js-refer-copy');
+if (referCopyBtn) {
+  referCopyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(referralLink).then(() => {
+      const original = referCopyBtn.textContent;
+      referCopyBtn.textContent = 'Copied!';
+      referCopyBtn.setAttribute('disabled', 'true');
+      setTimeout(() => {
+        referCopyBtn.textContent = original;
+        referCopyBtn.removeAttribute('disabled');
+      }, 2000);
+    });
+  });
+}
+
+// QR block: on mobile, tapping it triggers the share directly
+const referQrBlock = document.querySelector('.js-mobile-share');
+if (referQrBlock && isMobileDevice()) {
+  referQrBlock.setAttribute('role', 'button');
+  referQrBlock.setAttribute('tabindex', '0');
+  referQrBlock.style.cursor = 'pointer';
+  const triggerShare = () => window.open(buildReferralShareUrl(), '_blank');
+  referQrBlock.addEventListener('click', triggerShare);
+  referQrBlock.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') triggerShare();
+  });
+}
+
+// #refer hash: auto-scroll + brief glow highlight
+const handleReferHash = () => {
+  if (!window.location.hash.startsWith('#refer')) return;
+  const referSection = document.getElementById('refer');
+  if (!referSection) return;
+  setTimeout(() => {
+    referSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    referSection.classList.add('refer-highlight');
+    setTimeout(() => referSection.classList.remove('refer-highlight'), 2200);
+  }, 300);
+};
+
+window.addEventListener('load', handleReferHash);
+window.addEventListener('hashchange', handleReferHash);

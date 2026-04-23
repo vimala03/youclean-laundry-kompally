@@ -764,8 +764,8 @@
 
   .refer-banner {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: var(--space-24);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-48);
     align-items: center;
     background: linear-gradient(135deg, var(--color-surface), var(--color-surface-warm));
     border-radius: var(--radius-xxl);
@@ -793,13 +793,21 @@
   }
 
   .coupon-card {
-    display: grid;
-    gap: var(--space-12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-24);
     padding: var(--space-26);
     border-radius: var(--radius-lg);
     background: var(--color-brand-strong);
     color: var(--color-surface);
     box-shadow: var(--elevation-card);
+  }
+
+  .coupon-card-content {
+    display: grid;
+    gap: var(--space-12);
+    flex: 1;
   }
 
   .coupon-card strong {
@@ -812,6 +820,32 @@
     background: var(--color-overlay-soft);
     color: var(--color-surface);
     margin-bottom: var(--space-0);
+  }
+
+  .coupon-card-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+    background: #ffffff;
+    padding: var(--space-12);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .coupon-card-qr img {
+    display: block;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+  }
+
+  .coupon-card-qr .refer-qr-caption {
+    font-size: var(--text-sm);
+    color: var(--color-brand-strong);
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
   }
 
   .refer-note {
@@ -1220,6 +1254,17 @@
       grid-template-columns: 1fr;
     }
 
+    .coupon-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .coupon-card-qr {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+    }
+
     .nav {
       display: none;
     }
@@ -1355,4 +1400,83 @@
   font-size: 28px;
   padding: 12px 16px;
   border-radius: 50%;
+}
+.referral-code-box {
+  margin: var(--space-24) 0 0;
+  padding: var(--space-14) var(--space-16);
+  background: #f1f3f2;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.copy-btn {
+  margin-left: auto;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-md);
+  border: none;
+  background: #e5e7e6;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+
+.referral-stats {
+  margin: var(--space-12) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ── Referral QR caption (shared) ───────────────────────────────────────────── */
+.refer-qr-caption {
+  font-size: var(--text-sm);
+  text-align: center;
+  margin: 0;
+}
+
+.refer-hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  opacity: 0.8;
+  margin-top: var(--space-16);
+}
+
+/* ── Refer section — vertical rhythm + button consistency ─────────────────── */
+
+/* Subtext below heading */
+.refer-copy > p {
+  margin-top: var(--space-16);
+}
+
+/* CTA row */
+.refer-actions {
+  margin-top: var(--space-24) !important;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Both buttons same height, no text wrap */
+.refer-actions .btn {
+  height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: var(--radius-lg);
+  white-space: nowrap;
+  font-size: var(--text-sm);
+}
+
+/* ── #refer hash glow highlight ─────────────────────────────────────────────── */
+@keyframes referGlow {
+  0%   { outline-color: transparent; }
+  25%  { outline-color: var(--color-brand-strong); }
+  75%  { outline-color: var(--color-brand-strong); }
+  100% { outline-color: transparent; }
+}
+
+.refer-highlight {
+  outline: 2px solid transparent;
+  outline-offset: 6px;
+  border-radius: var(--radius-md);
+  animation: referGlow 2.2s ease-in-out forwards;
 }
