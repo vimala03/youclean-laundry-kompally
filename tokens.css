@@ -4,6 +4,7 @@
   :root {
     /* Color primitives */
     --ds-color-ink-900: #0f1d24;
+    --ds-color-brand-950: #002a38;
     --ds-color-brand-900: #003648;
     --ds-color-brand-700: #27425b;
     --ds-color-brand-500: #00d17c;
@@ -125,6 +126,7 @@
     --color-text-soft: var(--ds-alpha-ink-78, rgba(26, 28, 30, 0.78));
     --color-border: var(--ds-alpha-ink-20, rgba(26, 28, 30, 0.2));
     --color-brand-strong: var(--ds-color-brand-900, #003648);
+    --color-brand-hover: var(--ds-color-brand-950, #002a38);
     --color-brand: var(--ds-color-brand-700, #27425b);
     --color-accent: var(--ds-color-brand-500, #00d17c);
     --color-accent-soft: var(--ds-alpha-accent-25, rgba(0, 209, 124, 0.25));

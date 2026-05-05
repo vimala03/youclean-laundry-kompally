@@ -244,13 +244,34 @@
     border-radius: var(--radius-pill);
   }
 
-  .nav a:hover {
+  .nav a:not(.nav-cta):hover {
     background: var(--color-brand-08);
   }
 
   .nav-cta {
     background: var(--color-brand-strong);
     color: var(--color-surface) !important;
+    transition: background var(--motion-fast) var(--ease-standard),
+                transform var(--motion-fast) var(--ease-standard),
+                box-shadow var(--motion-fast) var(--ease-standard);
+  }
+
+  .nav-cta:hover {
+    background: var(--color-brand-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 54, 72, 0.32);
+  }
+
+  .nav-cta:focus-visible {
+    background: var(--color-brand-hover) !important;
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  .nav-cta:active {
+    background: var(--color-brand-strong) !important;
+    transform: translateY(0);
+    box-shadow: none;
   }
 
   .hero {
@@ -336,6 +357,19 @@
 
   .btn:hover {
     transform: translateY(calc(var(--space-2) * -1));
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+
+  .btn.primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 209, 124, 0.4);
+  }
+
+  .btn.ghost:hover {
+    background: var(--color-brand-08);
   }
 
   .hero-highlights {
