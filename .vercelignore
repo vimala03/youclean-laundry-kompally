@@ -1,0 +1,13 @@
+# Allowlist: only the files the live static site needs are deployed.
+# Everything else (CLAUDE.md, specs/, scripts/, data/, redesign/, docs/,
+# AUDIT-REPORT.md, index.html.save, ...) is never uploaded or served.
+/*
+!index.html
+!prices.html
+!styles.css
+!tokens.css
+!script.js
+!prices.js
+!prices-data.js
+!assets
+**/.DS_Store
